@@ -117,7 +117,7 @@ honda-passport-website/
 5. **Choose branch**: main
 6. **Save** and wait for deployment
 
-Your website will be available at: `[https://yourusername.github.io/repository-name](https://billstewrod.github.io/MidSizeSUVAnalysis/)`
+Your website will be available at: `https://billstewrod.github.io/MidSizeSUVAnalysis/`
 
 ## 🔧 Recent Updates & Fixes
 
