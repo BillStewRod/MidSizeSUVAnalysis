@@ -1,0 +1,368 @@
+/* Animation Utilities and Effects */
+
+/* Fade In Animations with Delays */
+.fade-in[data-delay="0"] {
+    animation-delay: 0s;
+}
+
+.fade-in[data-delay="200"] {
+    animation-delay: 0.2s;
+}
+
+.fade-in[data-delay="400"] {
+    animation-delay: 0.4s;
+}
+
+.fade-in[data-delay="600"] {
+    animation-delay: 0.6s;
+}
+
+.fade-in[data-delay="800"] {
+    animation-delay: 0.8s;
+}
+
+/* Slide In Animations */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scale Animations */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Gradient Animations */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Loading Animations */
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Hover Effects for Cards */
+.trim-card,
+.video-card,
+.financing-card,
+.incentives-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trim-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(216, 191, 216, 0.3);
+}
+
+.video-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* Button Hover Animations */
+.cta-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+/* Navigation Link Animations */
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-purple), var(--medium-purple));
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Table Row Animations */
+.comparison-table tr {
+    transition: all 0.2s ease;
+}
+
+.comparison-table tr:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px rgba(216, 191, 216, 0.2);
+}
+
+/* Scroll Progress Animation */
+.scroll-progress {
+    transition: width 0.1s ease-out;
+}
+
+/* Hero Title Animation */
+.hero-title {
+    animation: slideInFromBottom 1s ease-out;
+}
+
+.hero-subtitle {
+    animation: slideInFromBottom 1s ease-out 0.2s both;
+}
+
+.executive-summary {
+    animation: scaleIn 1s ease-out 0.4s both;
+}
+
+.hero-cta {
+    animation: slideInFromBottom 1s ease-out 0.6s both;
+}
+
+/* Section Title Animations */
+.section-title {
+    animation: slideInFromBottom 0.8s ease-out;
+}
+
+.section-title::after {
+    animation: scaleIn 0.5s ease-out 0.3s both;
+    transform-origin: center;
+}
+
+/* Stagger Animation for Multiple Elements */
+.trim-cards .trim-card:nth-child(1) {
+    animation: slideInFromBottom 0.8s ease-out 0.1s both;
+}
+
+.trim-cards .trim-card:nth-child(2) {
+    animation: slideInFromBottom 0.8s ease-out 0.3s both;
+}
+
+.trim-cards .trim-card:nth-child(3) {
+    animation: slideInFromBottom 0.8s ease-out 0.5s both;
+}
+
+.video-grid .video-card:nth-child(1) {
+    animation: slideInFromLeft 0.8s ease-out 0.1s both;
+}
+
+.video-grid .video-card:nth-child(2) {
+    animation: slideInFromBottom 0.8s ease-out 0.3s both;
+}
+
+.video-grid .video-card:nth-child(3) {
+    animation: slideInFromRight 0.8s ease-out 0.5s both;
+}
+
+/* Hamburger Menu Animation */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Menu Slide Animation */
+.nav-menu.mobile-open {
+    animation: slideInFromTop 0.3s ease-out;
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading State Animations */
+.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Interactive Elements */
+.price-badge {
+    transition: all 0.3s ease;
+}
+
+.price-badge:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(216, 191, 216, 0.4);
+}
+
+/* Focus Animations for Accessibility */
+.nav-link:focus,
+.cta-button:focus,
+.back-to-top:focus {
+    outline: 2px solid var(--medium-purple);
+    outline-offset: 2px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .fade-in {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Custom Scroll Animation for Intersection Observer */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Parallax Effect for Background Elements */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Smooth Hover Transitions */
+.smooth-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.smooth-hover:hover {
+    transform: translateY(-2px);
+}
+
+/* Ripple Effect */
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.ripple:active::before {
+    width: 300px;
+    height: 300px;
+}
